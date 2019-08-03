@@ -25,6 +25,9 @@ class GameOfLife {
     //Returns the cell value for the given row and col coordinates.
     //invalid value for row, like board[-1][0], will throw an error
 
+    if (row !== -1 && col !== -1) {
+       return this.board[row][col];
+    }
 
   }
 
