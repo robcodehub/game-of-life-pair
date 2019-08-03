@@ -88,6 +88,7 @@ class GameOfLife {
     livingCount = topCell + bottomCell + leftCell + rightCell + topRightCell + topLeftCell + bottomRightCell + bottomLeftCell;
 
 
+    //returns living count here
     //return count of living neighbours
     return livingCount;
   }
