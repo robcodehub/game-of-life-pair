@@ -1,7 +1,7 @@
 class GameOfLife {
   constructor(width, height) {
-    this.width = width;
-    this.height = height;
+    this.width = width; // cols
+    this.height = height; //rows
     this.board = this.makeBoard();
   }
 
@@ -10,29 +10,24 @@ class GameOfLife {
    */
 
   makeBoard() {
-    // TODO: Create and return an 2D Array
-    // with `this.height` as rows and `this.width` as cols.
-    // For example, given a height of 4 and a width of 3, it will generate:
-    // [
-    //  [0, 0, 0],
-    //  [0, 0, 0],
-    //  [0, 0, 0],
-    //  [0, 0, 0],
-    // ]
-
-    makeBoard() {
-      const rowsByColumns = []
-      for (let i = 0; i < this.height; i++) {
-        rowsByColumns[i] = []
-        for (let j = 0; j < this.width; j++) {
-          rowsByColumns[i].push(0)
-        }
+    const rowsByColumns = []
+    for (let i = 0; i < this.height; i++) {
+      rowsByColumns[i] = []
+      for (let j = 0; j < this.width; j++) {
+        rowsByColumns[i].push(0)
       }
-      return rowsByColumns
     }
+    return rowsByColumns
+  }
+
+
+  getCell(row, col) {
+    //Returns the cell value for the given row and col coordinates.
+    //invalid value for row, like board[-1][0], will throw an error
 
 
   }
+
 
 
   /**
@@ -62,3 +57,5 @@ class GameOfLife {
     this.board = newBoard;
   }
 }
+
+
