@@ -28,7 +28,7 @@ class GameOfLife {
        return this.board[row][col];
     }
     else {
-      // return dead!
+      return 0;
     }
 
   }
@@ -60,6 +60,36 @@ class GameOfLife {
 
   livingNeighbors(row, col) {
     // TODO: Return the count of living neighbors.
+    let livingCount = 0;
+
+    //current cell = this.board[row][col]
+    // top Cell = this.board[row-1][col]
+    // bottom cell this.board[row+1][col]
+    // left cell this.board[row][col-1]
+    // right cell this.board[row][col+1]
+
+    // top right cell this.board[row-1][col+1]
+    // top left cell this.board[row-1][col-1]
+    // bottom right cell this.board[row+1][col+1]
+    // bottom left cell this.board[row+1][col-1]
+
+
+    let topCell = this.getCell(row-1,col);
+    let bottomCell = this.getCell(row+1,col);
+    let leftCell = this.getCell(row,col-1);
+    let rightCell = this.getCell(row,col+1);
+
+    let topRightCell = this.getCell(row-1,col+1);
+    let topLeftCell = this.getCell(row-1,col-1);
+    let bottomRightCell = this.getCell(row+1,col+1);
+    let bottomLeftCell = this.getCell(row+1,col-1);
+
+
+    livingCount = topCell + bottomCell + leftCell + rightCell + topRightCell + topLeftCell + bottomRightCell + bottomLeftCell;
+
+
+    //return count of living neighbours
+    return livingCount;
   }
 
 
@@ -81,5 +111,3 @@ class GameOfLife {
     this.board = newBoard;
   }
 }
-
-
